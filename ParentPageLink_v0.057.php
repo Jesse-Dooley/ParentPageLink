@@ -3,7 +3,7 @@
  *
  * @name ParentPageLink
  * @author Jesse B. Dooley
- * @date September 25, 2016
+ * @date May 8, 2018
  * @description
  * On new page edit add this boilerplate at page bottom that inserts
  * a page-link pointing to the parent page.
@@ -50,9 +50,7 @@ function parentpagelink($editpage) {
     $wgEnableAPI = true;
     
     # A blank article has no content
-#     if ( is_null( $editpage->mArticle->getContent() ) ) {
-    if ( strlen( $editpage->mArticle->mContent ) == 0 ) {
-		echo "is null";
+     if ($editpage->isNew == true) {
         $parentID = "";
         $parentName = "";
         $category_name = "";
